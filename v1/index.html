@@ -205,6 +205,9 @@ a:hover{color:var(--ink)}
 .plan-card img{position:absolute;top:12px;left:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain}
 .plan-card figcaption{font-size:17px;font-weight:600;line-height:1.4}
 .plans-note{margin-top:16px;font-size:16px;color:var(--ink-2)}
+.intro-photo{margin:6px 0}
+.intro-photo .photo{aspect-ratio:3/2;max-width:100%}
+.intro-photo--tall .photo{aspect-ratio:4/3}
 /* Lightbox */
 .lightbox{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(14,22,17,.96);color:#FFFFFF}
 .lightbox::backdrop{background:rgba(14,22,17,.96)}
@@ -341,10 +344,12 @@ a:hover{color:var(--ink)}
       <h2 id="woning-titel" class="h2">De woning</h2>
       <p class="lead">Een huis dat bijna twintig jaar met zorg werd bewoond, met een tuin die al die tijd mee is gegroeid.</p>
       <div class="body">
-        <p>Aan de Stenenmolenstraat in Ertvelde, de straat van de beschermde Stenen Molen, staat deze halfopen woning, met uitzicht over de weides. Het gelijkvloers draait rond een grote leefruimte, met daarnaast de keuken, een berging die rechtstreeks aan de keuken grenst en een ruime garage.</p>
+        <p>Aan de Stenenmolenstraat in Ertvelde, de straat van de beschermde Stenen Molen, staat deze halfopen woning, met uitzicht over de weides. Het gelijkvloers draait rond een grote leefruimte met open keuken en speelhoek, een berging die rechtstreeks aan de keuken grenst en een ruime garage.</p>
+        <div class="intro-photo" data-gallery="intro1"><figure class="photo"><a class="zoom" href="media/leefruimte.jpg"><img src="media/leefruimte.jpg" alt="Leefruimte met zithoek en grote ramen" loading="lazy"></a></figure></div>
         <p>Op de verdieping liggen drie ruime slaapkamers, de grootste met een eigen dressing, en een badkamer van 12 m² met bad, inloopdouche en dubbele lavabo. Daarboven zit nog een afgesloten, volledig afgewerkte zolder: een vierde slaapkamer, een bureau of een speelruimte, net wat je nodig hebt.</p>
         <p>Buiten wacht het echte visitekaartje: een voortuin en een tuin achteraan, doordacht aangelegd en al die jaren zorgvuldig onderhouden, met een grote variatie aan planten en bomen. Twee terrassen en een tuinberging maken het plaatje compleet.</p>
         <p><span class="todo">Aanvullen: wat jullie zelf het meest zullen missen aan dit huis</span></p>
+        <div class="intro-photo intro-photo--tall" data-gallery="intro2"><figure class="photo"><a class="zoom" href="media/drone-tuin.jpg"><img src="media/drone-tuin.jpg" alt="De woning en de tuin achteraan, van boven" loading="lazy" style="object-position:50% 45%"></a></figure></div>
       </div>
     </div>
     <aside class="card ligging" aria-labelledby="ligging-titel">
@@ -367,13 +372,12 @@ a:hover{color:var(--ink)}
     <div class="gallery-group">
       <div class="photo-head"><h2 class="photo-title">Leefruimte en keuken</h2><p class="photo-hint">Klik op een foto om ze groot te bekijken.</p></div>
       <div class="gallery" data-gallery="g0">
-        <figure class="photo photo--big"><a class="zoom" href="media/leefruimte.jpg"><img src="media/leefruimte.jpg" alt="Leefruimte met zithoek en grote ramen" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/leefruimte-3.jpg"><img src="media/leefruimte-3.jpg" alt="Zithoek met houtkachel" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/leefruimte-2.jpg"><img src="media/leefruimte-2.jpg" alt="Eethoek in de leefruimte" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/keuken.jpg"><img src="media/keuken.jpg" alt="Keuken met kookeiland" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/keuken-3.jpg"><img src="media/keuken-3.jpg" alt="Keuken met ingebouwde toestellen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/keuken-2.jpg"><img src="media/keuken-2.jpg" alt="Keuken met deur naar buiten" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuinkamer.jpg"><img src="media/tuinkamer.jpg" alt="Kamer met groot raam naar de tuin" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/leefruimte-3.jpg"><img src="media/leefruimte-3.jpg" alt="Zithoek met houtkachel" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/keuken-3.jpg"><img src="media/keuken-3.jpg" alt="Keuken met ingebouwde toestellen" loading="lazy"></a></figure>
       </div>
     </div>
   </div>
@@ -390,8 +394,7 @@ a:hover{color:var(--ink)}
         <h3 class="col-title">Gelijkvloers</h3>
         <ul class="rows">
           <li class="row"><span>Inkomhal</span><span>met vestiaire</span></li>
-          <li class="row"><span>Leefruimte<small>Eet- en zithoek</small></span><span>36 m²</span></li>
-          <li class="row"><span>Keuken<small>Met ontbijthoek</small></span><span>21 m²</span></li>
+          <li class="row"><span>Leefruimte met keuken<small>Eet- en zithoek, speelhoek, keuken met ontbijthoek</small></span><span>ca. 57 m²</span></li>
           <li class="row"><span>Berging<small>Aansluitend aan de keuken</small></span><span>7 m²</span></li>
           <li class="row"><span>Garage<small>Met sectionale poort</small></span><span>26 m²</span></li>
           <li class="row"><span>Wasplaats</span><span>5 m²</span></li>
@@ -405,13 +408,12 @@ a:hover{color:var(--ink)}
           <li class="row"><span>Slaapkamer 2</span><span>16 m²</span></li>
           <li class="row"><span>Slaapkamer 3</span><span>17 m²</span></li>
           <li class="row"><span>Badkamer<small>Bad, inloopdouche, dubbele lavabo en toilet</small></span><span>12 m²</span></li>
-          <li class="row"><span>Berging<small>Met toegang tot de zolder</small></span><span>4 m²</span></li>
         </ul>
       </div>
       <div>
         <h3 class="col-title">Zolder</h3>
         <ul class="rows">
-          <li class="row"><span>Zolderkamer<small>Afgesloten en afgewerkt, bruikbaar als vierde slaapkamer</small></span><span>ca. 9,0 × 5,1 m</span></li>
+          <li class="row"><span>Zolderkamer<small>Volledig afgewerkt, met dakramen: een vierde slaapkamer, bureau of speelzolder</small></span><span>ca. 9,0 × 5,1 m</span></li>
         </ul>
       </div>
       <div>
@@ -441,24 +443,23 @@ a:hover{color:var(--ink)}
     <div class="tuin-gallery">
       <div class="gallery" data-gallery="tuin">
         <figure class="photo photo--big"><a class="zoom" href="media/tuin-03.jpg"><img src="media/tuin-03.jpg" alt="Terras onder de leibomen met border" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/drone-tuin.jpg"><img src="media/drone-tuin.jpg" alt="De tuin achteraan, van boven" loading="lazy"></a></figure>
         <figure class="photo photo--tall"><a class="zoom" href="media/tuin-09.jpg"><img src="media/tuin-09.jpg" alt="Grindpad langs de zijgevel met hortensia's" loading="lazy"></a></figure>
+        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-11.jpg"><img src="media/tuin-11.jpg" alt="Hortensia's tegen de gevel" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-08.jpg"><img src="media/tuin-08.jpg" alt="Zicht over de weides vanuit de tuin" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-01.jpg"><img src="media/tuin-01.jpg" alt="Grindterras met eettafel onder de leibomen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-05.jpg"><img src="media/tuin-05.jpg" alt="Het plekje onder de vijgenboom, achter de border met siergrassen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-04.jpg"><img src="media/tuin-04.jpg" alt="Terras met ligstoelen en eettafel" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-11.jpg"><img src="media/tuin-11.jpg" alt="Hortensia's tegen de gevel" loading="lazy"></a></figure>
         <figure class="photo photo--tall"><a class="zoom" href="media/tuin-12.jpg"><img src="media/tuin-12.jpg" alt="Zijpad met klimop tegen de gevel" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/tuin-10.jpg"><img src="media/tuin-10.jpg" alt="Hortensia's tussen lage hagen" loading="lazy"></a></figure>
+        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-16.jpg"><img src="media/tuin-16.jpg" alt="Gazon met bloeiende border" loading="lazy"></a></figure>
+        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-17.jpg"><img src="media/tuin-17.jpg" alt="Bloeiende border langs het gazon" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-06.jpg"><img src="media/tuin-06.jpg" alt="Gazon met schommel en ingegraven trampoline" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-02.jpg"><img src="media/tuin-02.jpg" alt="Grindterras naast de woning" loading="lazy"></a></figure>
         <figure class="photo photo--wide"><a class="zoom" href="media/drone-voortuin.jpg"><img src="media/drone-voortuin.jpg" alt="Voortuin met hagen, van boven" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/tuin-10.jpg"><img src="media/tuin-10.jpg" alt="Hortensia's tussen lage hagen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-13.jpg"><img src="media/tuin-13.jpg" alt="Zithoek op het gazon tussen de hagen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-14.jpg"><img src="media/tuin-14.jpg" alt="Zithoek onder een pergola" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-16.jpg"><img src="media/tuin-16.jpg" alt="Gazon met bloeiende border" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-17.jpg"><img src="media/tuin-17.jpg" alt="Bloeiende border langs het gazon" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/tuin-15.jpg"><img src="media/tuin-15.jpg" alt="Border met esdoorn en vaste planten" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/tuin-07.jpg"><img src="media/tuin-07.jpg" alt="Terras en border in de avondzon" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/tuin-15.jpg"><img src="media/tuin-15.jpg" alt="Border met esdoorn en vaste planten" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/tuin-07.jpg"><img src="media/tuin-07.jpg" alt="Terras en border in de avondzon" loading="lazy"></a></figure>
       </div>
     </div>
 
@@ -587,7 +588,6 @@ a:hover{color:var(--ink)}
           <div class="kv"><dt>Verwarming</dt><dd>Condenserende gasketel, radiatoren met thermostatische kranen en kamerthermostaat</dd></div>
           <div class="kv"><dt>Warm water</dt><dd>Via de gasketel</dd></div>
           <div class="kv"><dt>Beglazing</dt><dd>Hoogrendementsglas in aluminium profielen, dakvensters in hout</dd></div>
-          <div class="kv"><dt>Isolatie</dt><dd>Hellend dak 15 cm, plat dak 6 cm, spouwmuren 6 cm, vloer 4 cm</dd></div>
           <div class="kv"><dt>Zonnepanelen</dt><dd>4,6 kWp, gericht op het westen</dd></div>
         </dl>
       </div>
@@ -604,12 +604,12 @@ a:hover{color:var(--ink)}
       <div>
         <h3 class="col-title col-title--top">Stedenbouw en attesten</h3>
         <dl>
-          <div class="kv"><dt>Stedenbouwkundige bestemming</dt><dd><span class="todo">bv. woongebied</span></dd></div>
+          <div class="kv"><dt>Stedenbouwkundige bestemming</dt><dd>Woongebied</dd></div>
           <div class="kv"><dt>Omgevingsvergunning</dt><dd><span class="todo">ja of nee</span></dd></div>
-          <div class="kv"><dt>Dagvaarding of herstelvordering</dt><dd><span class="todo">ja of nee</span></dd></div>
-          <div class="kv"><dt>Voorkooprecht</dt><dd><span class="todo">ja of nee</span></dd></div>
+          <div class="kv"><dt>Dagvaarding of herstelvordering</dt><dd>Nee</dd></div>
+          <div class="kv"><dt>Voorkooprecht</dt><dd>Nee</dd></div>
           <div class="kv"><dt>Verkavelingsvergunning</dt><dd><span class="todo">ja of nee</span></dd></div>
-          <div class="kv"><dt>Overstromingsgevoeligheid</dt><dd>Niet in overstromingsgebied <span class="todo">P- en G-score</span></dd></div>
+          <div class="kv"><dt>Overstromingsgevoeligheid</dt><dd>Niet in overstromingsgebied (P-score A, G-score A)</dd></div>
           <div class="kv"><dt>Asbestattest</dt><dd>Niet vereist (bouwjaar 2007)</dd></div>
           <div class="kv"><dt>Bodemattest</dt><dd><span class="todo">datum</span></dd></div>
           <div class="kv"><dt>Onroerend erfgoed</dt><dd>Binnen het beschermd dorpsgezicht rond de Stenen Molen (1986)</dd></div>
