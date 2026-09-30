@@ -208,13 +208,15 @@ a:hover{color:var(--ink)}
 .intro-photo{margin:6px 0}
 .intro-photo .photo{aspect-ratio:3/2;max-width:100%}
 .intro-photo--tall .photo{aspect-ratio:4/3}
-.strip{display:none}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:20px max(var(--pad),calc((100% - 1440px)/2 + var(--pad)));background:#FFFFFF;border-bottom:1px solid var(--line)}
+.strip-item{margin:0;position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden}
+.strip-item .zoom{position:absolute;inset:0}
+.strip-item img{width:100%;height:100%;object-fit:cover}
+.split-media .zoom,.bleed .zoom{position:absolute;inset:0;display:block}
 @media (max-width:720px){
-  .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:16px var(--pad);background:#FFFFFF;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:16px var(--pad);-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .strip::-webkit-scrollbar{display:none}
-  .strip-item{flex:0 0 78%;margin:0;position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;scroll-snap-align:start}
-  .strip-item .zoom{position:absolute;inset:0}
-  .strip-item img{width:100%;height:100%;object-fit:cover}
+  .strip-item{flex:0 0 78%;scroll-snap-align:start}
 }
 /* Lightbox */
 .lightbox{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(14,22,17,.96);color:#FFFFFF}
@@ -336,13 +338,13 @@ a:hover{color:var(--ink)}
   </div>
 </section>
 
-<section class="strip" aria-label="Foto's in het kort" data-gallery="strip">
-    <figure class="strip-item"><a class="zoom" href="media/leefruimte.jpg"><img src="media/leefruimte.jpg" alt="Leefruimte met zithoek en grote ramen" loading="lazy"></a></figure>
-    <figure class="strip-item"><a class="zoom" href="media/tuin-03.jpg"><img src="media/tuin-03.jpg" alt="Terras onder de leibomen" loading="lazy"></a></figure>
+<section class="strip" aria-label="Eerste indruk">
     <figure class="strip-item"><a class="zoom" href="media/keuken.jpg"><img src="media/keuken.jpg" alt="Keuken met kookeiland" loading="lazy"></a></figure>
-    <figure class="strip-item"><a class="zoom" href="media/tuin-05.jpg"><img src="media/tuin-05.jpg" alt="Het plekje onder de vijgenboom" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-03.jpg"><img src="media/tuin-03.jpg" alt="Terras onder de leibomen met border" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/leefruimte-2.jpg"><img src="media/leefruimte-2.jpg" alt="Eethoek in de leefruimte" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-05.jpg"><img src="media/tuin-05.jpg" alt="Het plekje onder de vijgenboom, achter de border met siergrassen" loading="lazy"></a></figure>
     <figure class="strip-item"><a class="zoom" href="media/slaapkamer.jpg"><img src="media/slaapkamer.jpg" alt="Slaapkamer" loading="lazy"></a></figure>
-    <figure class="strip-item"><a class="zoom" href="media/tuin-08.jpg"><img src="media/tuin-08.jpg" alt="Zicht over de weides" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-08.jpg"><img src="media/tuin-08.jpg" alt="Zicht over de weides vanuit de tuin" loading="lazy"></a></figure>
     <figure class="strip-item"><a class="zoom" href="media/badkamer.jpg"><img src="media/badkamer.jpg" alt="Badkamer met ligbad" loading="lazy"></a></figure>
     <figure class="strip-item"><a class="zoom" href="media/zolderkamer.jpg"><img src="media/zolderkamer.jpg" alt="Afgewerkte zolderkamer" loading="lazy"></a></figure>
 </section>
@@ -391,9 +393,7 @@ a:hover{color:var(--ink)}
     <div class="gallery-group">
       <div class="photo-head"><h2 class="photo-title">Leefruimte en keuken</h2><p class="photo-hint">Klik op een foto om ze groot te bekijken.</p></div>
       <div class="gallery" data-gallery="g0">
-        <figure class="photo photo--wide"><a class="zoom" href="media/leefruimte-3.jpg"><img src="media/leefruimte-3.jpg" alt="Zithoek met houtkachel" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/leefruimte-2.jpg"><img src="media/leefruimte-2.jpg" alt="Eethoek in de leefruimte" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/keuken.jpg"><img src="media/keuken.jpg" alt="Keuken met kookeiland" loading="lazy"></a></figure>
+        <figure class="photo photo--big"><a class="zoom" href="media/leefruimte-3.jpg"><img src="media/leefruimte-3.jpg" alt="Zithoek met houtkachel" loading="lazy"></a></figure>
         <figure class="photo photo--wide"><a class="zoom" href="media/keuken-3.jpg"><img src="media/keuken-3.jpg" alt="Keuken met ingebouwde toestellen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/keuken-2.jpg"><img src="media/keuken-2.jpg" alt="Keuken met deur naar buiten" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuinkamer.jpg"><img src="media/tuinkamer.jpg" alt="Kamer met groot raam naar de tuin" loading="lazy"></a></figure>
@@ -461,24 +461,19 @@ a:hover{color:var(--ink)}
 
     <div class="tuin-gallery">
       <div class="gallery" data-gallery="tuin">
-        <figure class="photo photo--big"><a class="zoom" href="media/tuin-03.jpg"><img src="media/tuin-03.jpg" alt="Terras onder de leibomen met border" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-09.jpg"><img src="media/tuin-09.jpg" alt="Grindpad langs de zijgevel met hortensia's" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-11.jpg"><img src="media/tuin-11.jpg" alt="Hortensia's tegen de gevel" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/tuin-08.jpg"><img src="media/tuin-08.jpg" alt="Zicht over de weides vanuit de tuin" loading="lazy"></a></figure>
+        <figure class="photo photo--big"><a class="zoom" href="media/tuin-09.jpg"><img src="media/tuin-09.jpg" alt="Grindpad langs de zijgevel met hortensia's" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/tuin-11.jpg"><img src="media/tuin-11.jpg" alt="Hortensia's tegen de gevel" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-01.jpg"><img src="media/tuin-01.jpg" alt="Grindterras met eettafel onder de leibomen" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/tuin-05.jpg"><img src="media/tuin-05.jpg" alt="Het plekje onder de vijgenboom, achter de border met siergrassen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-04.jpg"><img src="media/tuin-04.jpg" alt="Terras met ligstoelen en eettafel" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-12.jpg"><img src="media/tuin-12.jpg" alt="Zijpad met klimop tegen de gevel" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-16.jpg"><img src="media/tuin-16.jpg" alt="Gazon met bloeiende border" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/tuin-17.jpg"><img src="media/tuin-17.jpg" alt="Bloeiende border langs het gazon" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/tuin-12.jpg"><img src="media/tuin-12.jpg" alt="Zijpad met klimop tegen de gevel" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/tuin-17.jpg"><img src="media/tuin-17.jpg" alt="Bloeiende border langs het gazon" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-06.jpg"><img src="media/tuin-06.jpg" alt="Gazon met schommel en ingegraven trampoline" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-02.jpg"><img src="media/tuin-02.jpg" alt="Grindterras naast de woning" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/drone-voortuin.jpg"><img src="media/drone-voortuin.jpg" alt="Voortuin met hagen, van boven" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/tuin-10.jpg"><img src="media/tuin-10.jpg" alt="Hortensia's tussen lage hagen" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/drone-voortuin.jpg"><img src="media/drone-voortuin.jpg" alt="Voortuin met hagen, van boven" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/tuin-10.jpg"><img src="media/tuin-10.jpg" alt="Hortensia's tussen lage hagen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-13.jpg"><img src="media/tuin-13.jpg" alt="Zithoek op het gazon tussen de hagen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-14.jpg"><img src="media/tuin-14.jpg" alt="Zithoek onder een pergola" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/tuin-15.jpg"><img src="media/tuin-15.jpg" alt="Border met esdoorn en vaste planten" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/tuin-07.jpg"><img src="media/tuin-07.jpg" alt="Terras en border in de avondzon" loading="lazy"></a></figure>
       </div>
     </div>
 
@@ -491,28 +486,28 @@ a:hover{color:var(--ink)}
         <figure class="season">
           <div class="photo">
             <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de lente</span></div>
-            <img src="media/tuin-lente.jpg" alt="De tuin in de lente" loading="lazy">
+            <a class="zoom" href="media/tuin-16.jpg"><img src="media/tuin-16.jpg" alt="De tuin in de lente" loading="lazy"></a>
           </div>
           <figcaption>Lente</figcaption>
         </figure>
         <figure class="season">
           <div class="photo">
             <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de zomer</span></div>
-            <img src="media/tuin-zomer.jpg" alt="De tuin in de zomer" loading="lazy">
+            <a class="zoom" href="media/tuin-07.jpg"><img src="media/tuin-07.jpg" alt="De tuin in de zomer" loading="lazy"></a>
           </div>
           <figcaption>Zomer</figcaption>
         </figure>
         <figure class="season">
           <div class="photo">
             <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de herfst</span></div>
-            <img src="media/tuin-herfst.jpg" alt="De tuin in de herfst" loading="lazy">
+            <a class="zoom" href="media/tuin-herfst.jpg"><img src="media/tuin-herfst.jpg" alt="De tuin in de herfst" loading="lazy"></a>
           </div>
           <figcaption>Herfst</figcaption>
         </figure>
         <figure class="season">
           <div class="photo">
             <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de winter</span></div>
-            <img src="media/tuin-winter.jpg" alt="De tuin in de winter" loading="lazy">
+            <a class="zoom" href="media/tuin-winter.jpg"><img src="media/tuin-winter.jpg" alt="De tuin in de winter" loading="lazy"></a>
           </div>
           <figcaption>Winter</figcaption>
         </figure>
@@ -556,12 +551,10 @@ a:hover{color:var(--ink)}
     <div class="gallery-group">
       <div class="photo-head"><h2 class="photo-title">Slaapkamers en badkamer</h2></div>
       <div class="gallery" data-gallery="g1">
-        <figure class="photo photo--big"><a class="zoom" href="media/slaapkamer.jpg"><img src="media/slaapkamer.jpg" alt="Slaapkamer" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/slaapkamer-2.jpg"><img src="media/slaapkamer-2.jpg" alt="Slaapkamer met raam" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/slaapkamer-3.jpg"><img src="media/slaapkamer-3.jpg" alt="Slaapkamer met zicht op de gang" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/badkamer-2.jpg"><img src="media/badkamer-2.jpg" alt="Badkamer met dakraam" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/badkamer-douche.jpg"><img src="media/badkamer-douche.jpg" alt="Inloopdouche" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/badkamer.jpg"><img src="media/badkamer.jpg" alt="Badkamer met ligbad" loading="lazy"></a></figure>
+        <figure class="photo photo--big"><a class="zoom" href="media/slaapkamer-2.jpg"><img src="media/slaapkamer-2.jpg" alt="Slaapkamer met raam" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/slaapkamer-3.jpg"><img src="media/slaapkamer-3.jpg" alt="Slaapkamer met zicht op de gang" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/badkamer-2.jpg"><img src="media/badkamer-2.jpg" alt="Badkamer met dakraam" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/badkamer-douche.jpg"><img src="media/badkamer-douche.jpg" alt="Inloopdouche" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/badkamer-lavabo.jpg"><img src="media/badkamer-lavabo.jpg" alt="Lavabo in de badkamer" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/toilet.jpg"><img src="media/toilet.jpg" alt="Toilet" loading="lazy"></a></figure>
       </div>
@@ -569,9 +562,8 @@ a:hover{color:var(--ink)}
     <div class="gallery-group">
       <div class="photo-head"><h2 class="photo-title">Zolder en overige ruimtes</h2></div>
       <div class="gallery" data-gallery="g2">
-        <figure class="photo photo--big"><a class="zoom" href="media/zolderkamer.jpg"><img src="media/zolderkamer.jpg" alt="Afgewerkte zolderkamer" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/zolderkamer-2.jpg"><img src="media/zolderkamer-2.jpg" alt="Zolderkamer met dakramen" loading="lazy"></a></figure>
-        <figure class="photo"><a class="zoom" href="media/zolderkamer-3.jpg"><img src="media/zolderkamer-3.jpg" alt="Zithoek op de zolder" loading="lazy"></a></figure>
+        <figure class="photo photo--big"><a class="zoom" href="media/zolderkamer-2.jpg"><img src="media/zolderkamer-2.jpg" alt="Zolderkamer met dakramen" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/zolderkamer-3.jpg"><img src="media/zolderkamer-3.jpg" alt="Zithoek op de zolder" loading="lazy"></a></figure>
         <figure class="photo photo--wide"><a class="zoom" href="media/fitness.jpg"><img src="media/fitness.jpg" alt="Fitnessruimte" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/overloop.jpg"><img src="media/overloop.jpg" alt="Overloop" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/trap.jpg"><img src="media/trap.jpg" alt="Trap" loading="lazy"></a></figure>
@@ -643,9 +635,9 @@ a:hover{color:var(--ink)}
     <div class="gallery-group">
       <div class="photo-head"><h2 class="photo-title">Garage en berging</h2></div>
       <div class="gallery" data-gallery="g3">
-        <figure class="photo photo--tall"><a class="zoom" href="media/berging.jpg"><img src="media/berging.jpg" alt="Berging met rekken" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/berging-2.jpg"><img src="media/berging-2.jpg" alt="Berging" loading="lazy"></a></figure>
-        <figure class="photo photo--wide"><a class="zoom" href="media/garage-2.jpg"><img src="media/garage-2.jpg" alt="Garage met kasten en fietsen" loading="lazy"></a></figure>
+        <figure class="photo photo--big"><a class="zoom" href="media/berging.jpg"><img src="media/berging.jpg" alt="Berging met rekken" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/berging-2.jpg"><img src="media/berging-2.jpg" alt="Berging" loading="lazy"></a></figure>
+        <figure class="photo"><a class="zoom" href="media/garage-2.jpg"><img src="media/garage-2.jpg" alt="Garage met kasten en fietsen" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/garage.jpg"><img src="media/garage.jpg" alt="Garage met ingebouwde kasten" loading="lazy"></a></figure>
         <figure class="photo"><a class="zoom" href="media/wasruimte.jpg"><img src="media/wasruimte.jpg" alt="Wasruimte" loading="lazy"></a></figure>
       </div>
@@ -653,9 +645,8 @@ a:hover{color:var(--ink)}
     <div class="gallery-group">
       <div class="photo-head"><h2 class="photo-title">Vanuit de lucht</h2></div>
       <div class="gallery" data-gallery="g4">
-        <figure class="photo photo--big"><a class="zoom" href="media/drone-overzicht.jpg"><img src="media/drone-overzicht.jpg" alt="Luchtbeeld van de woning en de omgeving" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/drone-tuin.jpg"><img src="media/drone-tuin.jpg" alt="De woning en de tuin achteraan, van boven" loading="lazy"></a></figure>
-        <figure class="photo photo--tall"><a class="zoom" href="media/drone-voorkant.jpg"><img src="media/drone-voorkant.jpg" alt="Voorkant met oprit en voortuin, van boven" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/drone-overzicht.jpg"><img src="media/drone-overzicht.jpg" alt="Luchtbeeld van de woning en de omgeving" loading="lazy"></a></figure>
+        <figure class="photo photo--wide"><a class="zoom" href="media/drone-voorkant.jpg"><img src="media/drone-voorkant.jpg" alt="Voorkant met oprit en voortuin, van boven" loading="lazy"></a></figure>
       </div>
     </div>
     <div class="gallery-group" id="grondplannen">
@@ -753,7 +744,11 @@ a:hover{color:var(--ink)}
     document.querySelectorAll('.zoom').forEach(function (a) {
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        lbList = Array.prototype.slice.call(a.closest('[data-gallery]').querySelectorAll('.zoom')).filter(function (x) { return x.querySelector('img'); });
+        var inPlans = !!a.closest('.plans-grid'); var seenH = {};
+        lbList = Array.prototype.slice.call(document.querySelectorAll('.zoom')).filter(function (x) {
+          if (!x.querySelector('img') || !!x.closest('.plans-grid') !== inPlans) return false;
+          var h = x.getAttribute('href'); if (seenH[h]) return false; seenH[h] = 1; return true; });
+        if (lbList.indexOf(a) === -1) lbList.unshift(a);
         lbShow(lbList.indexOf(a));
         lbox.showModal();
       });
