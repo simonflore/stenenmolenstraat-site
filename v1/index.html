@@ -208,6 +208,14 @@ a:hover{color:var(--ink)}
 .intro-photo{margin:6px 0}
 .intro-photo .photo{aspect-ratio:3/2;max-width:100%}
 .intro-photo--tall .photo{aspect-ratio:4/3}
+.strip{display:none}
+@media (max-width:720px){
+  .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:16px var(--pad);background:#FFFFFF;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip-item{flex:0 0 78%;margin:0;position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;scroll-snap-align:start}
+  .strip-item .zoom{position:absolute;inset:0}
+  .strip-item img{width:100%;height:100%;object-fit:cover}
+}
 /* Lightbox */
 .lightbox{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(14,22,17,.96);color:#FFFFFF}
 .lightbox::backdrop{background:rgba(14,22,17,.96)}
@@ -328,6 +336,17 @@ a:hover{color:var(--ink)}
   </div>
 </section>
 
+<section class="strip" aria-label="Foto's in het kort" data-gallery="strip">
+    <figure class="strip-item"><a class="zoom" href="media/leefruimte.jpg"><img src="media/leefruimte.jpg" alt="Leefruimte met zithoek en grote ramen" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-03.jpg"><img src="media/tuin-03.jpg" alt="Terras onder de leibomen" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/keuken.jpg"><img src="media/keuken.jpg" alt="Keuken met kookeiland" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-05.jpg"><img src="media/tuin-05.jpg" alt="Het plekje onder de vijgenboom" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/slaapkamer.jpg"><img src="media/slaapkamer.jpg" alt="Slaapkamer" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-08.jpg"><img src="media/tuin-08.jpg" alt="Zicht over de weides" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/badkamer.jpg"><img src="media/badkamer.jpg" alt="Badkamer met ligbad" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/zolderkamer.jpg"><img src="media/zolderkamer.jpg" alt="Afgewerkte zolderkamer" loading="lazy"></a></figure>
+</section>
+
 <section class="facts" aria-label="Kerngegevens">
   <dl class="wrap">
     <div><dt>Type</dt><dd>Halfopen woning</dd></div>
@@ -344,8 +363,8 @@ a:hover{color:var(--ink)}
       <h2 id="woning-titel" class="h2">De woning</h2>
       <p class="lead">Een huis dat bijna twintig jaar met zorg werd bewoond, met een tuin die al die tijd mee is gegroeid.</p>
       <div class="body">
-        <p>Aan de Stenenmolenstraat in Ertvelde, de straat van de beschermde Stenen Molen, staat deze halfopen woning, met uitzicht over de weides. Het gelijkvloers draait rond een grote leefruimte met open keuken en speelhoek, een berging die rechtstreeks aan de keuken grenst en een ruime garage.</p>
         <div class="intro-photo" data-gallery="intro1"><figure class="photo"><a class="zoom" href="media/leefruimte.jpg"><img src="media/leefruimte.jpg" alt="Leefruimte met zithoek en grote ramen" loading="lazy"></a></figure></div>
+        <p>Aan de Stenenmolenstraat in Ertvelde, de straat van de beschermde Stenen Molen, staat deze halfopen woning, met uitzicht over de weides. Het gelijkvloers draait rond een grote leefruimte met open keuken en speelhoek, een berging die rechtstreeks aan de keuken grenst en een ruime garage.</p>
         <p>Op de verdieping liggen drie ruime slaapkamers, de grootste met een eigen dressing, en een badkamer van 12 m² met bad, inloopdouche en dubbele lavabo. Daarboven zit nog een afgesloten, volledig afgewerkte zolder: een vierde slaapkamer, een bureau of een speelruimte, net wat je nodig hebt.</p>
         <p>Buiten wacht het echte visitekaartje: een voortuin en een tuin achteraan, doordacht aangelegd en al die jaren zorgvuldig onderhouden, met een grote variatie aan planten en bomen. Twee terrassen en een tuinberging maken het plaatje compleet.</p>
         <p><span class="todo">Aanvullen: wat jullie zelf het meest zullen missen aan dit huis</span></p>
