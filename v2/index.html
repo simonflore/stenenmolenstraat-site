@@ -205,6 +205,14 @@ a:hover{color:var(--ink)}
 .plan-card img{position:absolute;top:12px;left:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain}
 .plan-card figcaption{font-size:17px;font-weight:600;line-height:1.4}
 .plans-note{margin-top:16px;font-size:16px;color:var(--ink-2)}
+.strip{display:none}
+@media (max-width:720px){
+  .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:16px var(--pad);background:#FFFFFF;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip-item{flex:0 0 78%;margin:0;position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;scroll-snap-align:start}
+  .strip-item .zoom{position:absolute;inset:0}
+  .strip-item img{width:100%;height:100%;object-fit:cover}
+}
 /* Lightbox */
 .lightbox{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(14,22,17,.96);color:#FFFFFF}
 .lightbox::backdrop{background:rgba(14,22,17,.96)}
@@ -380,6 +388,17 @@ details.more .inner{padding:16px 0 32px;display:flex;flex-direction:column;gap:5
   </div>
 </section>
 
+<section class="strip" aria-label="Foto's in het kort" data-gallery="strip">
+    <figure class="strip-item"><a class="zoom" href="media/leefruimte.jpg"><img src="media/leefruimte.jpg" alt="Leefruimte met zithoek en grote ramen" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-03.jpg"><img src="media/tuin-03.jpg" alt="Terras onder de leibomen" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/keuken.jpg"><img src="media/keuken.jpg" alt="Keuken met kookeiland" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-05.jpg"><img src="media/tuin-05.jpg" alt="Het plekje onder de vijgenboom" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/slaapkamer.jpg"><img src="media/slaapkamer.jpg" alt="Slaapkamer" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/tuin-08.jpg"><img src="media/tuin-08.jpg" alt="Zicht over de weides" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/badkamer.jpg"><img src="media/badkamer.jpg" alt="Badkamer met ligbad" loading="lazy"></a></figure>
+    <figure class="strip-item"><a class="zoom" href="media/zolderkamer.jpg"><img src="media/zolderkamer.jpg" alt="Afgewerkte zolderkamer" loading="lazy"></a></figure>
+</section>
+
 <section id="welkom" class="section section--white" aria-labelledby="welkom-titel">
   <div class="wrap">
     <div class="letter">
@@ -539,7 +558,7 @@ details.more .inner{padding:16px 0 32px;display:flex;flex-direction:column;gap:5
         <h2 id="slapen-titel" class="chapter-title">Boven slaap je rustig</h2>
         <div class="story">
           <p>Op de verdieping liggen drie ruime slaapkamers. De grootste heeft een eigen dressing. De badkamer van 12 m² heeft een bad, een inloopdouche en een dubbele lavabo.</p>
-          <p>Daarboven zit nog een afgesloten, volledig afgewerkte zolder. <span class="vrij">Door de jaren heen was dat een speelzolder, een logeerkamer en een rustige plek om te lezen; voor een nieuw gezin is het makkelijk een vierde slaapkamer.</span></p>
+          <p>Daarboven ligt nog een volledig afgewerkte zolder met dakramen. <span class="vrij">Door de jaren heen was dat een speelzolder, een logeerkamer en een rustige plek om te lezen; voor een nieuw gezin is het makkelijk een vierde slaapkamer.</span></p>
         </div>
       </div>
       <div class="split-media"><img src="media/slaapkamer-2.jpg" alt="Slaapkamer" loading="lazy"></div>
@@ -755,7 +774,7 @@ details.more .inner{padding:16px 0 32px;display:flex;flex-direction:column;gap:5
       <li><span>Keuring elektrische installatie<small>Conform, 18 december 2019</small></span><span class="soon">volgt</span></li>
       <li><span>Stedenbouwkundige inlichtingen<small>Bestemming, vergunningen, voorkooprecht</small></span><span class="soon">volgt</span></li>
       <li><span>Bodemattest</span><span class="soon">volgt</span></li>
-      <li><span>Informatie over overstromingsgevoeligheid<small>P- en G-score</small></span><span class="soon">volgt</span></li>
+      <li><span>Informatie over overstromingsgevoeligheid<small>Niet in overstromingsgebied: P-score A, G-score A</small></span><span class="soon">volgt</span></li>
     </ul>
     <div class="gallery-wrap">
       <div class="plans-grid" data-gallery="plans" style="margin-top:0">
