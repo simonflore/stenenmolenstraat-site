@@ -77,25 +77,18 @@ a:hover{color:var(--ink)}
 .hero{position:relative;height:calc(100vh - var(--header));height:calc(100svh - var(--header));min-height:620px;max-height:920px;display:flex;align-items:flex-end;background:#2F4231;overflow:hidden;color:#FFFFFF}
 .hero-media{position:absolute;inset:0}
 .hero-media>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-video{opacity:0;transition:opacity .8s ease}
-.hero-video.is-ready{opacity:1}
 .hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,22,17,.72) 0%,rgba(14,22,17,.35) 38%,rgba(14,22,17,0) 62%)}
 .hero-content{position:relative;width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:32px 48px;padding-bottom:clamp(40px,8vh,88px)}
 .hero-text{display:flex;flex-direction:column;gap:20px;max-width:960px}
 .hero-address{font-size:20px;font-weight:500;line-height:1.4}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.2vw,84px);line-height:1.02;letter-spacing:-.01em}
 .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px}
-.hero-side{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0}
-.drone-todo{display:flex;align-items:center;gap:10px;max-width:300px;padding:10px 14px}
-.drone-todo svg{flex-shrink:0}
-.video-toggle{min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.7);border-radius:3px;background:rgba(14,22,17,.35);color:#FFFFFF;font:500 15px var(--sans);cursor:pointer}
 @media (max-width:720px){
   .hero{display:block;height:auto;min-height:0;max-height:none}
   .hero-media{position:relative;height:52vh;height:52svh;min-height:300px}
   .hero-scrim{display:none}
   .hero-content{flex-direction:column;align-items:stretch;padding-top:28px;padding-bottom:44px}
   .hero-actions .btn{flex:1 1 100%}
-  .hero-side{align-items:flex-start}
 }
 
 /* Kerngegevens */
@@ -162,20 +155,10 @@ a:hover{color:var(--ink)}
 .tuin-intro{display:flex;flex-direction:column;gap:16px;max-width:640px}
 .tuin-intro .lead{font-size:clamp(28px,3vw,36px);line-height:1.25}
 .tuin-head .tuin-body{max-width:520px;font-size:19px;color:var(--moss-ink)}
-.seasons{margin-top:80px}
-.seasons-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 32px;margin-bottom:24px}
-.seasons-head h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.2}
-.seasons-head p{font-size:16px;color:var(--moss-ink)}
-.seasons-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.season{display:flex;flex-direction:column;gap:12px}
-.season .photo{aspect-ratio:3/4}
-.season figcaption{font-size:17px;line-height:1.4}
 .tuin-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;margin-top:80px}
 .tuin-facts h3{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px}
 @media (max-width:900px){
-  .seasons-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .tuin-facts{grid-template-columns:1fr;gap:32px;margin-top:56px}
-  .seasons{margin-top:56px}
 }
 
 /* Foto's */
@@ -315,8 +298,6 @@ a:hover{color:var(--ink)}
     </svg>
     <!-- Stilstaand beeld uit de droneshot (optioneel): media/droneshot-still.jpg -->
     <img class="hero-still" src="media/droneshot-still.jpg" alt="Luchtbeeld van de tuin met de weides erachter">
-    <!-- Droneshot: media/droneshot.mp4, met media/droneshot.webm als terugval (zonder geluid) -->
-    <video class="hero-video" data-src="media/droneshot.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
     <div class="hero-scrim"></div>
   </div>
   <div class="hero-content wrap">
@@ -327,13 +308,6 @@ a:hover{color:var(--ink)}
         <a class="btn btn-light" href="#bezoek">Bezoek inplannen</a>
         <a class="btn btn-ghost" href="#woning">Bekijk de woning</a>
       </div>
-    </div>
-    <div class="hero-side">
-      <p class="todo drone-todo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5l5-3v9l-5-3z"/></svg>
-        <span>Hier komt de droneshot, als stille bewegende achtergrond</span>
-      </p>
-      <button class="video-toggle" type="button" hidden>Video pauzeren</button>
     </div>
   </div>
 </section>
@@ -369,7 +343,6 @@ a:hover{color:var(--ink)}
         <p>Aan de Stenenmolenstraat in Ertvelde, de straat van de beschermde Stenen Molen, staat deze halfopen woning, met uitzicht over de weides. Die weides blijven ook weides. Het gelijkvloers draait rond een grote leefruimte met open keuken en speelhoek, een berging die rechtstreeks aan de keuken grenst en een ruime garage. Beneden ligt eiken visgraatparket, en in de leefruimte staat een houtkachel voor gezellige winteravonden; een startvoorraad brandhout ligt al klaar. De keukentoestellen zijn de voorbije vijf jaar vernieuwd, behalve de kookplaat en de dampkap (zo'n tien jaar oud).</p>
         <p>Op de verdieping liggen drie ruime slaapkamers, de grootste met een eigen dressing, en een badkamer van 12 m² met bad, inloopdouche en lavabo; de aansluiting voor een tweede lavabo is er al. Daarboven ligt de dakkamer met dakramen, de vierde slaapkamer, met drie kleine bergingen: twee onder de dakspanten en een onder de bovenste vaste trap. Op de verdiepingen ligt watervast laminaat dat zonder onderbreking doorloopt van ruimte tot ruimte. Alle ruimtes zijn bekleed met schilderdoek en professioneel geschilderd.</p>
         <p>Buiten wacht het echte visitekaartje: een voortuin en een tuin achteraan, doordacht aangelegd en al die jaren zorgvuldig onderhouden, met een grote variatie aan planten en bomen. Twee terrassen en een tuinberging maken het plaatje compleet. Achteraan in de tuin is er grondwater uit een vergunde boorput, ideaal voor tuinberegening.</p>
-        <p><span class="todo">Aanvullen: wat jullie zelf het meest zullen missen aan dit huis</span></p>
         <div class="intro-photo intro-photo--tall" data-gallery="intro2"><figure class="photo"><a class="zoom" href="media/drone-tuin.jpg"><img src="media/drone-tuin.jpg" alt="De woning en de tuin achteraan, van boven" loading="lazy" style="object-position:50% 45%"></a></figure></div>
       </div>
     </div>
@@ -478,58 +451,19 @@ a:hover{color:var(--ink)}
       </div>
     </div>
 
-    <div class="seasons">
-      <div class="seasons-head">
-        <h3>Door het jaar</h3>
-        <p>Zo ziet de tuin eruit in elk seizoen.</p>
-      </div>
-      <div class="seasons-grid">
-        <figure class="season">
-          <div class="photo">
-            <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de lente</span></div>
-            <a class="zoom" href="media/tuin-16.jpg"><img src="media/tuin-16.jpg" alt="De tuin in de lente" loading="lazy"></a>
-          </div>
-          <figcaption>Lente</figcaption>
-        </figure>
-        <figure class="season">
-          <div class="photo">
-            <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de zomer</span></div>
-            <a class="zoom" href="media/tuin-07.jpg"><img src="media/tuin-07.jpg" alt="De tuin in de zomer" loading="lazy"></a>
-          </div>
-          <figcaption>Zomer</figcaption>
-        </figure>
-        <figure class="season">
-          <div class="photo">
-            <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de herfst</span></div>
-            <a class="zoom" href="media/tuin-herfst.jpg"><img src="media/tuin-herfst.jpg" alt="De tuin in de herfst" loading="lazy"></a>
-          </div>
-          <figcaption>Herfst</figcaption>
-        </figure>
-        <figure class="season">
-          <div class="photo">
-            <div class="ph"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Tuin in de winter</span></div>
-            <a class="zoom" href="media/tuin-winter.jpg"><img src="media/tuin-winter.jpg" alt="De tuin in de winter" loading="lazy"></a>
-          </div>
-          <figcaption>Winter</figcaption>
-        </figure>
-      </div>
-    </div>
-
     <div class="tuin-facts">
       <div>
         <h3>Beplanting</h3>
         <dl>
           <div class="kv"><dt>Bomen</dt><dd>Platanen, catalpa's, een kerselaar, olijfbomen, twee vijgenbomen, een notenboom en vier leilindes</dd></div>
           <div class="kv"><dt>Hagen</dt><dd>Beuk, ligustrum en palm</dd></div>
-          <div class="kv"><dt>Blikvangers</dt><dd><span class="todo">wat valt op, en wanneer bloeit het</span></dd></div>
-          <div class="kv"><dt>Plantenlijst</dt><dd><span class="todo">optioneel, mee te geven aan de nieuwe eigenaars</span></dd></div>
         </dl>
       </div>
       <div>
         <h3>Oppervlakte en ligging</h3>
         <dl>
           <div class="kv"><dt>Tuinoppervlakte</dt><dd>Ongeveer 481 m²</dd></div>
-          <div class="kv"><dt>Perceel</dt><dd>625 m²</dd></div>
+          <div class="kv"><dt>Perceel</dt><dd>625 m², 13 m breed en 50 m diep</dd></div>
           <div class="kv"><dt>Oriëntatie tuin</dt><dd>West, met zon in de namiddag en 's avonds</dd></div>
           <div class="kv"><dt>Zicht</dt><dd>Over de weides, die ook weides blijven</dd></div>
         </dl>
@@ -587,7 +521,7 @@ a:hover{color:var(--ink)}
           <div class="kv"><dt>Bouwjaar</dt><dd>2007</dd></div>
           <div class="kv"><dt>Bruikbare vloeroppervlakte</dt><dd>226 m² (volgens EPC)</dd></div>
           <div class="kv"><dt>Perceeloppervlakte</dt><dd>625 m²</dd></div>
-          <div class="kv"><dt>Afmetingen perceel</dt><dd><span class="todo">nakijken: 12 × 49 m geeft 589 m², niet 625 m²</span></dd></div>
+          <div class="kv"><dt>Afmetingen perceel</dt><dd>13 m breed, 50 m diep</dd></div>
           <div class="kv"><dt>Kadastraal inkomen</dt><dd><span class="todo">€ …</span></dd></div>
           <div class="kv"><dt>Vloeren</dt><dd>Eiken visgraatparket beneden; op de verdiepingen watervast laminaat, doorlopend zonder onderbreking tussen de ruimtes</dd></div>
           <div class="kv"><dt>Muren</dt><dd>Overal schilderdoek, professioneel geschilderd</dd></div>
@@ -775,13 +709,6 @@ a:hover{color:var(--ink)}
     lbox.addEventListener('close', function () { lbImg.removeAttribute('src'); });
   }
 
-  /* ---------- Droneshot-still aanwezig: melding verbergen ---------- */
-  var still = document.querySelector('.hero-still');
-  if (still) {
-    var hideTodo = function () { if (still.naturalWidth > 0) { var t = document.querySelector('.drone-todo'); if (t) t.hidden = true; } };
-    if (still.complete) hideTodo(); else still.addEventListener('load', hideTodo, { once: true });
-  }
-
   /* ---------- Menu ---------- */
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('hoofdmenu');
@@ -797,29 +724,6 @@ a:hover{color:var(--ink)}
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
-  });
-
-  /* ---------- Droneshot ---------- */
-  var video = document.querySelector('.hero-video');
-  var videoToggle = document.querySelector('.video-toggle');
-  var droneTodo = document.querySelector('.drone-todo');
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (video && !reduceMotion) {
-    video.muted = true;
-    video.addEventListener('canplay', function () {
-      video.classList.add('is-ready');
-      var p = video.play();
-      if (p && p.catch) p.catch(function () {});
-      if (droneTodo) droneTodo.hidden = true;
-      videoToggle.hidden = false;
-    }, { once: true });
-    var src = video.dataset.src;
-    if (!video.canPlayType('video/mp4; codecs="avc1.640028"') && video.canPlayType('video/webm; codecs="vp9"')) src = src.replace(/\.mp4$/, '.webm');
-    video.src = src;
-  }
-  videoToggle.addEventListener('click', function () {
-    if (video.paused) { video.play(); videoToggle.textContent = 'Video pauzeren'; }
-    else { video.pause(); videoToggle.textContent = 'Video afspelen'; }
   });
 })();
 </script>
