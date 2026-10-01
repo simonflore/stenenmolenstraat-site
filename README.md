@@ -31,3 +31,13 @@ Per versie één resource:
 - Bezoeken: Cal.com (`stenenmolenstraat/plaatsbezoek`), vrije momenten via de publieke slots-API, boeken via de Cal.com-popup.
 - Kaart (v1): OpenStreetMap-embed.
 - Lettertypes: Google Fonts.
+
+## Folder voor bezoekers
+
+`folder/folder.pdf` is een afdrukbare folder van 4 A4-pagina's, gemaakt van `folder/folder.html` (die de foto's uit `v1/media/` gebruikt). Na een wijziging opnieuw maken met:
+
+```
+node folder/maak-pdf.js
+```
+
+De QR-code (`folder/qr.svg`) verwijst naar `https://stenenmolenstraat.flo.re/v1/`.

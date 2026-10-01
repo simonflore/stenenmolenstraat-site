@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Folder Stenenmolenstraat 23j, Ertvelde</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{
+  --mist:#EFF1EB;--ink:#18231C;--ink-2:#2E3A32;--muted:#4F5B53;
+  --moss:#34503C;--moss-ink:#DCE5D8;--moss-muted:#C9D6C5;--moss-line:#56705C;
+  --line:#D3D8CF;
+  --serif:'Libre Caslon Display',Georgia,serif;
+  --sans:'Albert Sans','Helvetica Neue',Arial,sans-serif;
+  --m:16mm;
+}
+@page{size:A4;margin:0}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);font-size:9.6pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#9AA59C}
+h1,h2,h3,p,figure,dl,dd,ul{margin:0;padding:0}
+ul{list-style:none}
+img{display:block}
+
+.page{position:relative;width:210mm;height:297mm;overflow:hidden;background:#FFFFFF;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+@media screen{.page{margin:10mm auto;box-shadow:0 2px 12px rgba(0,0,0,.25)}}
+
+.kicker{font-size:8pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--moss)}
+.h2{font-family:var(--serif);font-weight:400;font-size:30pt;line-height:1.05;margin-top:3mm}
+.lead{font-family:var(--serif);font-size:13.5pt;line-height:1.35;color:var(--ink)}
+.body p+p{margin-top:2.6mm}
+.body{color:var(--ink-2)}
+.photo{position:relative;overflow:hidden;border-radius:1.2mm;background:var(--mist)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foot{position:absolute;left:var(--m);right:var(--m);bottom:9mm;display:flex;justify-content:space-between;font-size:7.5pt;color:var(--muted);border-top:.3mm solid var(--line);padding-top:2.5mm}
+
+/* ---------- Pagina 1: cover ---------- */
+.cover-photo{position:absolute;left:0;top:0;width:210mm;height:178mm}
+.cover-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.cover-tag{position:absolute;left:var(--m);top:14mm;background:#FFFFFF;color:var(--ink);font-weight:600;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;padding:2.4mm 4mm;border-radius:.8mm}
+.cover-text{position:absolute;left:var(--m);right:var(--m);top:190mm}
+.cover-text .addr{font-size:11pt;font-weight:500;color:var(--moss)}
+.cover-text h1{font-family:var(--serif);font-weight:400;font-size:36pt;line-height:1.02;margin-top:3mm;letter-spacing:-.01em}
+.cover-facts{position:absolute;left:var(--m);right:var(--m);top:240mm;display:grid;grid-template-columns:repeat(5,1fr);border-top:.6mm solid var(--ink)}
+.cover-facts div{padding:3.5mm 3mm 0 0}
+.cover-facts dt{font-size:7.5pt;color:var(--muted)}
+.cover-facts dd{font-size:12pt;font-weight:500;line-height:1.25;margin-top:1mm}
+.cover-bottom{position:absolute;left:var(--m);right:var(--m);bottom:11mm;display:flex;justify-content:space-between;align-items:flex-end;font-size:8.5pt;color:var(--ink-2)}
+.cover-bottom strong{font-weight:600;color:var(--ink)}
+
+/* ---------- Pagina 2: de woning ---------- */
+.p2-head{position:absolute;left:var(--m);right:var(--m);top:16mm;display:grid;grid-template-columns:1fr 1fr;gap:8mm;align-items:end}
+.p2-photos{position:absolute;left:var(--m);right:var(--m);top:56mm;height:74mm;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:2.5mm}
+.p2-photos .big{grid-row:span 2}
+.p2-text{position:absolute;left:var(--m);right:var(--m);top:137mm;display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.indeling{position:absolute;left:var(--m);right:var(--m);top:196mm;display:grid;grid-template-columns:repeat(3,1fr);gap:7mm}
+.col-title{font-size:10pt;font-weight:600;padding-bottom:2mm;border-bottom:.5mm solid var(--ink)}
+.rows li{display:flex;justify-content:space-between;gap:3mm;padding:1.8mm 0;border-bottom:.25mm solid var(--line);font-size:8.6pt;line-height:1.3}
+.rows li small{display:block;font-size:7.4pt;color:var(--muted);margin-top:.4mm}
+.rows li>span:last-child{white-space:nowrap;text-align:right}
+.highlight{margin-top:4mm;padding:3.5mm 4mm;background:var(--mist);border-left:1mm solid var(--moss);font-size:8.6pt;line-height:1.45;color:var(--ink-2)}
+
+/* ---------- Pagina 3: de tuin ---------- */
+.p3{background:var(--moss);color:#FFFFFF}
+.p3 .kicker{color:var(--moss-ink)}
+.p3 .lead{color:#FFFFFF}
+.p3 .body{color:var(--moss-ink)}
+.p3-head{position:absolute;left:var(--m);right:var(--m);top:16mm;display:grid;grid-template-columns:1fr 1fr;gap:8mm;align-items:end}
+.p3-photos{position:absolute;left:var(--m);right:var(--m);top:66mm;height:106mm;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:2.5mm}
+.p3-photos .tall{grid-row:span 2}
+.p3-photos .wide{grid-column:span 2}
+.p3-cols{position:absolute;left:var(--m);right:var(--m);top:180mm;display:grid;grid-template-columns:1.25fr 1fr;gap:9mm}
+.kv{padding:2.2mm 0;border-top:.25mm solid var(--moss-line)}
+.kv dt{font-size:7.4pt;color:var(--moss-muted)}
+.kv dd{font-size:9pt;line-height:1.35;margin-top:.6mm}
+.p3 h3{font-size:10pt;font-weight:600;margin-bottom:1.5mm}
+.near li{display:flex;justify-content:space-between;gap:3mm;padding:2mm 0;border-top:.25mm solid var(--moss-line);font-size:8.8pt}
+.near li small{display:block;font-size:7.3pt;color:var(--moss-muted)}
+.near li>span:last-child{white-space:nowrap}
+.p3 .foot{color:var(--moss-muted);border-top-color:var(--moss-line)}
+
+/* ---------- Pagina 4: technisch en contact ---------- */
+.p4-head{position:absolute;left:var(--m);right:var(--m);top:16mm}
+.tech{position:absolute;left:var(--m);right:var(--m);top:42mm;display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
+.tech h3{font-size:9.5pt;font-weight:600;padding-top:2mm;border-top:.5mm solid var(--ink);margin-bottom:1mm}
+.tech .kv{border-top:0;border-bottom:.25mm solid var(--line);padding:1.8mm 0}
+.tech .kv dt{color:var(--muted);font-size:7pt}
+.tech .kv dd{font-size:8.2pt;line-height:1.32}
+.plans{position:absolute;left:var(--m);right:var(--m);top:146mm;display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+.plans figure{display:flex;flex-direction:column;gap:1.5mm}
+.plans .plan{height:66mm;border:.25mm solid var(--line);border-radius:1mm;background:#FFFFFF;padding:2mm}
+.plans .plan img{width:100%;height:100%;object-fit:contain}
+.plans figcaption{font-size:8pt;font-weight:600}
+.plans-note{position:absolute;left:var(--m);right:var(--m);top:224mm;font-size:7.4pt;color:var(--muted)}
+.contact{position:absolute;left:0;right:0;bottom:0;height:52mm;background:var(--ink);color:#FFFFFF;display:flex;align-items:center;gap:9mm;padding:0 var(--m)}
+.contact .qr{flex-shrink:0;width:30mm;height:30mm;background:#FFFFFF;padding:2.2mm;border-radius:1mm}
+.contact .qr img{width:100%;height:100%}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:20pt;line-height:1.1}
+.contact p{font-size:9pt;color:#C9D1C6;margin-top:2mm;line-height:1.5}
+.contact strong{color:#FFFFFF;font-weight:600}
+.contact .fine{font-size:6.8pt;color:#A9B3AB;margin-top:3mm}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. Voorkant ============ -->
+<section class="page">
+  <div class="cover-photo"><img src="../v1/media/droneshot-still.jpg" alt=""></div>
+  <div class="cover-tag">Te koop</div>
+  <div class="cover-text">
+    <p class="addr">Stenenmolenstraat 23j, 9940 Ertvelde</p>
+    <h1>Halfopen woning met uitzicht over de weides</h1>
+  </div>
+  <dl class="cover-facts">
+    <div><dt>Slaapkamers</dt><dd>4</dd></div>
+    <div><dt>Bruikbare oppervlakte</dt><dd>226 m²</dd></div>
+    <div><dt>Perceel</dt><dd>625 m²</dd></div>
+    <div><dt>Tuin</dt><dd>525 m², west</dd></div>
+    <div><dt>EPC</dt><dd>B, 101 kWh/m²</dd></div>
+  </dl>
+  <div class="cover-bottom">
+    <span><strong>Te koop rechtstreeks bij de eigenaars</strong><br>Bouwjaar 2010 · perfect onderhouden · tot in de puntjes afgewerkt</span>
+    <span>stenenmolenstraat@gmail.com</span>
+  </div>
+</section>
+
+<!-- ============ 2. De woning ============ -->
+<section class="page">
+  <div class="p2-head">
+    <div><span class="kicker">De woning</span><h2 class="h2">Dit was lang<br>ons thuis</h2></div>
+    <p class="lead">Een huis dat met zorg werd bewoond, perfect onderhouden en tot in de puntjes afgewerkt.</p>
+  </div>
+  <div class="p2-photos">
+    <figure class="photo big"><img src="../v1/media/leefruimte-3.jpg" alt=""></figure>
+    <figure class="photo"><img src="../v1/media/keuken.jpg" alt=""></figure>
+    <figure class="photo"><img src="../v1/media/leefruimte-2.jpg" alt=""></figure>
+    <figure class="photo"><img src="../v1/media/slaapkamer-2.jpg" alt=""></figure>
+    <figure class="photo"><img src="../v1/media/badkamer.jpg" alt=""></figure>
+  </div>
+  <div class="p2-text body">
+    <div>
+      <p>Aan de Stenenmolenstraat in Ertvelde, de straat van de beschermde Stenen Molen, staat deze halfopen woning met uitzicht over de weides. Die weides blijven ook weides.</p>
+      <p>Het gelijkvloers draait rond een grote leefruimte met open keuken en speelhoek. Er ligt eiken visgraatparket, en de houtkachel zorgt voor gezellige winteravonden; een startvoorraad brandhout ligt al klaar. De keukentoestellen zijn de voorbije vijf jaar vernieuwd, behalve de kookplaat en de dampkap.</p>
+    </div>
+    <div>
+      <p>Op de verdieping liggen drie ruime slaapkamers en een badkamer van 12 m². Daarboven ligt de dakkamer, de vierde slaapkamer, met drie kleine bergingen. Op de verdiepingen loopt watervast laminaat zonder onderbreking door.</p>
+      <p class="highlight">Alle ruimtes zijn bekleed met schildervlies en worden regelmatig herschilderd. Bij de schatting haalden de makelaars de afwerking zelf aan als uitzonderlijk.</p>
+    </div>
+  </div>
+  <div class="indeling">
+    <div>
+      <h3 class="col-title">Gelijkvloers</h3>
+      <ul class="rows">
+        <li><span>Leefruimte met keuken<small>Eet- en zithoek, houtkachel, speelhoek, recht kookeiland</small></span><span>ca. 57 m²</span></li>
+        <li><span>Inkomhal<small>Met vestiaire</small></span><span></span></li>
+        <li><span>Berging<small>Aansluitend aan de keuken</small></span><span>7 m²</span></li>
+        <li><span>Garage<small>Met sectionale poort</small></span><span>26 m²</span></li>
+        <li><span>Wasplaats</span><span>5 m²</span></li>
+        <li><span>Apart toilet</span><span>ja</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="col-title">Verdieping</h3>
+      <ul class="rows">
+        <li><span>Slaapkamer 1<small>Met dressing van 5 m²</small></span><span>21 m²</span></li>
+        <li><span>Slaapkamer 2</span><span>16 m²</span></li>
+        <li><span>Slaapkamer 3</span><span>17 m²</span></li>
+        <li><span>Badkamer<small>Bad, inloopdouche, lavabo (aansluiting voor een tweede aanwezig) en toilet</small></span><span>12 m²</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="col-title">Dakverdieping</h3>
+      <ul class="rows">
+        <li><span>Slaapkamer 4<small>Dakkamer met dakramen</small></span><span>ca. 9,0 × 5,1 m</span></li>
+        <li><span>Bergingen<small>Twee onder de dakspanten, een onder de bovenste vaste trap</small></span><span>3</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Stenenmolenstraat 23j, Ertvelde</span><span>2</span></div>
+</section>
+
+<!-- ============ 3. De tuin ============ -->
+<section class="page p3">
+  <div class="p3-head">
+    <div><span class="kicker">De tuin</span><h2 class="h2">Met zorg aangelegd, gesnoeid en bijgeplant</h2></div>
+    <p class="body">Voor en achter het huis ligt samen zo'n 525 m² tuin, op het westen, met zon tot 's avonds laat en zicht over de weides. Twee terrassen en een tuinberging maken hem meteen bruikbaar.</p>
+  </div>
+  <div class="p3-photos">
+    <figure class="photo tall"><img src="../v1/media/drone-tuin.jpg" alt="" style="object-position:50% 45%"></figure>
+    <figure class="photo wide"><img src="../v1/media/tuin-03.jpg" alt=""></figure>
+    <figure class="photo"><img src="../v1/media/tuin-01.jpg" alt=""></figure>
+    <figure class="photo"><img src="../v1/media/tuin-05.jpg" alt=""></figure>
+  </div>
+  <div class="p3-cols">
+    <div>
+      <h3>Beplanting en water</h3>
+      <dl>
+        <div class="kv"><dt>Bomen</dt><dd>Platanen, catalpa's, een kerselaar, olijfbomen, twee vijgenbomen, een notenboom en vier leilindes</dd></div>
+        <div class="kv"><dt>Hagen</dt><dd>Beuk, ligustrum en palm</dd></div>
+        <div class="kv"><dt>Water</dt><dd>Regenwaterput van 10.000 liter, en achteraan grondwater uit een vergunde boorput: ideaal voor tuinberegening</dd></div>
+        <div class="kv"><dt>Perceel</dt><dd>625 m², 13 m breed en 50 m diep</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3>Ligging</h3>
+      <ul class="near">
+        <li><span>R4 (Gentse ring)<small>2 km met de auto</small></span><span>3 min</span></li>
+        <li><span>Basisscholen<small>De Schatkist en De Regenboog</small></span><span>1 km</span></li>
+        <li><span>Supermarkten<small>Centrum van Ertvelde</small></span><span>1,5 km</span></li>
+        <li><span>Treinstation<small>Gent-Dampoort, 17 km</small></span><span>20 min</span></li>
+        <li><span>Gent centrum<small>17 km met de auto</small></span><span>25 min</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Stenenmolenstraat 23j, Ertvelde</span><span>3</span></div>
+</section>
+
+<!-- ============ 4. Technisch en contact ============ -->
+<section class="page">
+  <div class="p4-head"><span class="kicker">In het kort</span><h2 class="h2">Technische gegevens</h2></div>
+  <div class="tech">
+    <div>
+      <h3>Algemeen</h3>
+      <dl>
+        <div class="kv"><dt>Type</dt><dd>Halfopen woning</dd></div>
+        <div class="kv"><dt>Bouwjaar</dt><dd>2010</dd></div>
+        <div class="kv"><dt>Bruikbare vloeroppervlakte</dt><dd>226 m² (volgens EPC)</dd></div>
+        <div class="kv"><dt>Perceel</dt><dd>625 m², 13 × 50 m</dd></div>
+        <div class="kv"><dt>Vergunningen</dt><dd>Alles is vergund</dd></div>
+        <div class="kv"><dt>Parkeren</dt><dd>Garage en oprit</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3>Afwerking</h3>
+      <dl>
+        <div class="kv"><dt>Vloeren</dt><dd>Eiken visgraatparket beneden; doorlopend watervast laminaat op de verdiepingen</dd></div>
+        <div class="kv"><dt>Muren</dt><dd>Overal schildervlies, regelmatig herschilderd</dd></div>
+        <div class="kv"><dt>Keukentoestellen</dt><dd>De voorbije vijf jaar vernieuwd, behalve kookplaat en dampkap (ca. 10 jaar)</dd></div>
+        <div class="kv"><dt>Beglazing</dt><dd>Hoogrendementsglas in aluminium, dakvensters in hout</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3>Energie</h3>
+      <dl>
+        <div class="kv"><dt>EPC</dt><dd>Label B, 101 kWh/m² per jaar: net boven de grens van label A (100)</dd></div>
+        <div class="kv"><dt>Naar label A</dt><dd>Eenvoudig, met een hybride ketel</dd></div>
+        <div class="kv"><dt>Verwarming</dt><dd>Condenserende gasketel; houtkachel in de leefruimte</dd></div>
+        <div class="kv"><dt>Zonnepanelen</dt><dd>4,6 kWp uit 2011, op het westen</dd></div>
+        <div class="kv"><dt>Groenestroomcertificaten</dt><dd>Tot en met 2031 nog ca. 4 per jaar, aan € 330 per stuk</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3>Installaties</h3>
+      <dl>
+        <div class="kv"><dt>Elektrische keuring</dt><dd>Conform (18 december 2019), volgende keuring vóór 2044</dd></div>
+        <div class="kv"><dt>Regenwaterput</dt><dd>10.000 liter</dd></div>
+        <div class="kv"><dt>Grondwater</dt><dd>Vergunde boorput, voor tuinberegening</dd></div>
+        <div class="kv"><dt>Riolering</dt><dd>Gescheiden</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="plans">
+    <figure><div class="plan"><img src="../v1/media/grondplan-gelijkvloers.png" alt=""></div><figcaption>Gelijkvloers</figcaption></figure>
+    <figure><div class="plan"><img src="../v1/media/grondplan-verdieping.png" alt=""></div><figcaption>Verdieping</figcaption></figure>
+    <figure><div class="plan"><img src="../v1/media/grondplan-zolder.png" alt=""></div><figcaption>Dakverdieping</figcaption></figure>
+  </div>
+  <p class="plans-note">Grondplannen uit het bouwplan, ter indicatie. Het kookeiland is in werkelijkheid recht, zonder de ontbijthoek van het plan.</p>
+  <div class="contact">
+    <div class="qr"><img src="qr.svg" alt=""></div>
+    <div>
+      <h2>Bedankt voor je bezoek</h2>
+      <p>Alle foto's, de grondplannen, het EPC en het keuringsverslag vind je op de website: scan de code of surf naar <strong>stenenmolenstraat.flo.re</strong>.<br>Vragen? Mail naar <strong>stenenmolenstraat@gmail.com</strong>.</p>
+      <p class="fine">Te koop rechtstreeks bij de eigenaars. De informatie in deze folder werd met zorg samengesteld, maar is niet contractueel bindend.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
